@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>HayatımınAnlamıNurdan</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #ffe6f0, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .quiz-container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #d63384;
+    }
+    input {
+      padding: 10px;
+      margin-top: 15px;
+      width: 200px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #d63384;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container" id="quiz">
+    <h1>Merhaba Nurdanım ❤️</h1>
+    <p>Sevgilinizin hazırladığı özel siteye erişmek için şu soruyu cevaplayın:</p>
+    <p><strong>İlk tanıştığınız yıl nedir?</strong></p>
+    <input type="text" id="answer" placeholder="Cevabı buraya yazın...">
+    <br>
+    <button onclick="checkAnswer()">Devam Et</button>
+    <p id="error" style="color:red; margin-top:10px;"></p>
+  </div>
+
+  <div class="quiz-container hidden" id="main-content">
+    <h1>Hoş Geldin Sevgilim ❤️</h1>
+    <p>Şimdi seni bekleyen özel anılara ve sürprizlere doğru ilerleyelim...</p>
+    <p>Devam etmek için <strong>sadece bana özel</strong> hazırlanan sayfaya geçiyoruz...</p>
+    <button onclick="goToSite()">Siteye Gir</button>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const answer = document.getElementById("answer").value;
+      const correctAnswer = "2023";
+      if (answer.trim() === correctAnswer) {
+        document.getElementById("quiz").classList.add("hidden");
+        document.getElementById("main-content").classList.remove("hidden");
+      } else {
+        document.getElementById("error").textContent = "Cevap yanlış canım, bir daha dene 💕";
+      }
+    }
+
+    function goToSite() {
+      window.location.href = "anilar.html"; // Bir sonraki sayfaya geçiş
+    }
+  </script>
+
+</body>
+</html>
